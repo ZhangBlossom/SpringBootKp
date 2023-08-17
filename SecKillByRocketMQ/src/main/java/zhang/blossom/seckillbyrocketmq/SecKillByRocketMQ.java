@@ -5,6 +5,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import zhang.blossom.seckillbyrocketmq.mapper.MessageIdempotentMapper;
 
+/**
+ * 阿斯顿
+ */
 @SpringBootApplication
 @MapperScan(basePackages = "zhang.blossom.seckillbyrocketmq.mapper")
 public class SecKillByRocketMQ {
