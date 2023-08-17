@@ -50,7 +50,7 @@ public class BloomFilter {
         bf.add(id);
 
         System.out.println(bf.contain(id));   // true
-        System.out.println("" + bf.contain("520000"));  //false
+        System.out.println("" + bf.contain("520123000"));  //false
     }
 }
 class HashCodeGenerator{
