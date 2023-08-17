@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import zhang.blossom.seckillbyrocketmq.constant.MQConstant;
+import zhang.blossom.seckillbyrocketmq.entity.MessageIdempotent;
 import zhang.blossom.seckillbyrocketmq.mapper.MessageIdempotentMapper;
 
 import java.util.List;
@@ -49,8 +50,16 @@ public class RepeatRocketMQTest {
         consumer.subscribe("testTopic","*");
         consumer.registerMessageListener(new MessageListenerConcurrently() {
             @Override
-            public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list, ConsumeConcurrentlyContext consumeConcurrentlyContext) {
-                return null;
+            public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list,
+                                                            ConsumeConcurrentlyContext consumeConcurrentlyContext) {
+                MessageExt msg = list.get(0);
+                String key = msg.getKeys();
+                MessageIdempotent messageIdempotent = new MessageIdempotent();
+                messageIdempotent.setMessageId(1L);
+                messageIdempotent.setMessageContent(new String(msg.getBody()));
+                messageIdempotent.setMessageUuid(key);
+                int i = mapper.updateById(messageIdempotent);
+                return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
             }
         });
     }
