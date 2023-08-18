@@ -128,7 +128,7 @@ public class RetryRocketMQTest {
                     handleDB();
                 }catch (Exception e){
                     //捕获到操作异常
-                    //判断消息的重试次数 如果过多就不重试了 直接记录日志
+                    //判断消息的重试次数 如果过多就不重试了 直接记录日志 就好
                     int reconsumeTimes = messageExt.getReconsumeTimes();
                     if (reconsumeTimes>=3){
                         System.out.println("记录日志并且上报给运维 MYSQL等");

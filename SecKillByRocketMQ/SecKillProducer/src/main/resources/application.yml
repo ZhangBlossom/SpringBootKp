@@ -1,0 +1,4 @@
+rocketmq:
+  name-server: 123.249.111.175:9876
+  producer:
+    group: boot-producer-group
