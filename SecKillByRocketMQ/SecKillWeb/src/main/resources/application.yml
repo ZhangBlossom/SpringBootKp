@@ -1,0 +1,20 @@
+rocketmq:
+  name-server: 123.249.111.175:9876
+  producer:
+    group: seckill-producer
+
+spring:
+  application:
+    name: seckillweb
+  redis:
+    host: 123.249.97.220
+    port: 6379
+    password: LiHongyan03
+    connect-timeout: 10000
+    timeout: 10000
+
+server:
+  tomcat:
+    threads:
+      max: 400
+  port: 8081

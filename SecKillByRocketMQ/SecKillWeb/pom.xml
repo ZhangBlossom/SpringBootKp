@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>blossom.project.springbootkp</groupId>
-    <artifactId>SecKillProducer</artifactId>
+    <artifactId>SecKillWeb</artifactId>
     <version>1.0</version>
-    <name>SecKillProducer</name>
-    <description>SecKillProducer</description>
+    <name>SecKillWeb</name>
+    <description>SecKillWeb秒杀项目web端</description>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
             <version>${spring-boot.version}</version>
         </dependency>
         <dependency>
@@ -74,7 +74,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>blossom.project.springbootkp.seckillproducer.SecKillWebApplication</mainClass>
+                    <mainClass>blossom.project.springbootkp.seckillweb.SecKillWebApplication</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>
