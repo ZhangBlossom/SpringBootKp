@@ -28,7 +28,7 @@ public class SecKillListener implements RocketMQListener<MessageExt> {
     @Autowired
     private StringRedisTemplate redisTemplate;
 
-    //如果有多个线程进来当前方法 那么由于只有一个线程可以拿到锁
+    //如果有多个线程进来当前方法 那么由于只有一个线程可以拿到锁1
     //那么如果直接让其他线程就走else返回了 那么这个线程就永远拿不到锁去操作了
     //所以我们设定一个自旋锁时间 让他走while去自旋
 
