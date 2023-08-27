@@ -1,7 +1,7 @@
 # 一个springboot项目中可以写很多个消费者程序
 # 但是一般在开发中 一个boot项目只对应一个消费者
 rocketmq:
-  name-server: 123.249.111.175:9876
+  name-server: hwy175:9876
   consumer:
     group: seckill-consumer
 server:
@@ -12,11 +12,11 @@ spring:
     name: seckillservice
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://123.249.97.220:3306/test?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://hwy220:3306/test?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
     username: root
     password: LiHongyan03
   redis:
-    host: 123.249.97.220
+    host: hwy220
     port: 6379
     password: LiHongyan03
     connect-timeout: 10000

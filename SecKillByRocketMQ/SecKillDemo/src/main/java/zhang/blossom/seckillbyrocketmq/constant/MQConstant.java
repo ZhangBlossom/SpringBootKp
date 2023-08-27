@@ -6,5 +6,5 @@ package zhang.blossom.seckillbyrocketmq.constant;
  * MQConstant类
  */
 public interface MQConstant {
-    String NAMESRV = "123.249.111.175:9876";
+    String NAMESRV = "hwy175:9876";
 }

@@ -1,5 +1,5 @@
 rocketmq:
-  name-server: 123.249.111.175:9876
+  name-server: hwy175:9876
   producer:
     group: seckill-producer
 
@@ -7,7 +7,7 @@ spring:
   application:
     name: seckillweb
   redis:
-    host: 123.249.97.220
+    host: hwy220
     port: 6379
     password: LiHongyan03
     connect-timeout: 10000

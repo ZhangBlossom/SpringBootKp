@@ -1,9 +1,27 @@
 spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://hwy220:3306/test?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: LiHongyan03
+  redis:
+    host: hwy220
+    port: 6379
+    password: LiHongyan03
+    connect-timeout: 10000
+    timeout: 10000
   cloud:
     nacos:
       discovery:
         # 服务注册地址
-        server-addr: 123.249.97.220:8848
+        server-addr: hwy220:8848
       config:
         # 配置中心地址
-        server-addr: 123.249.97.220:8848
+        server-addr: hwy220:8848
+
+
+# 一个springboot项目中可以写很多个消费者程序
+# 但是一般在开发中 一个boot项目只对应一个消费者
+rocketmq:
+  name-server: hwy175:9876
+

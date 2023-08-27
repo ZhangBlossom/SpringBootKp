@@ -1,4 +1,4 @@
 rocketmq:
   name-server: hwy175:9876
   producer:
-    group: boot-producer-group
+    group: mq-producer-group

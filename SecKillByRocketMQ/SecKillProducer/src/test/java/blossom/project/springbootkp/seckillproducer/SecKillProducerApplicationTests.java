@@ -64,6 +64,9 @@ class SecKillProducerApplicationTests {
         rocketMQTemplate.syncSend("bootTestTopic", message, 3000, 2);
     }
 
+    /**
+     * 有序消息 那么我们发送的消息需要指定吧消息放到哪一个队列去
+     */
     @Test
     void orderedProducer() {
         msgModels.forEach(x -> {
