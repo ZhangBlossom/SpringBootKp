@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: threadutil
+  redis:
+    host: hwy220
+    port: 6379
+    password: LiHongyan03
+    connect-timeout: 10000
+    timeout: 10000
+
+server:
+  tomcat:
+    threads:
+      max: 400
+  port: 8081
