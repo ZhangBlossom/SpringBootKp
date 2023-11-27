@@ -1,0 +1,36 @@
+spring:
+  shardingsphere:
+    datasource:
+      names: m1,m2
+    m1:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/easyconfig2?serverTimezone=UTC
+      username: root
+      password: root
+    m2:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/easyconfig?serverTimezone=UTC
+      username: root
+      password: root
+    sharding:
+      default-data-source-name: m1
+      tables:
+        user:
+          actual-data-nodes: m${1..2}.user_{1..2}
+          table-strategy:
+            inline:
+              sharding-column: uid
+              algorithm-expression: user_$->{uid%2+1}
+          key-generator:
+            column: uid
+            type: SNOWFLAKE
+            props: worker.id=1
+          database-strategy:
+            inline:
+              sharding-column: uid
+              algorithm-expression: m$->{uid%2+1}
+    props:
+      sql:
+        show: true
