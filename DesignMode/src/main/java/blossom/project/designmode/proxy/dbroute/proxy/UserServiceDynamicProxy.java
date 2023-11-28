@@ -1,6 +1,6 @@
-package blossom.project.designmode.dbroute.proxy;
+package blossom.project.designmode.proxy.dbroute.proxy;
 
-import blossom.project.designmode.dbroute.db.DynamicDataSource;
+import blossom.project.designmode.proxy.dbroute.db.DynamicDataSource;
 import blossom.project.designmode.proxy.myjdkproxy.MyClassLoader;
 import blossom.project.designmode.proxy.myjdkproxy.MyInvocationHandler;
 import blossom.project.designmode.proxy.myjdkproxy.MyProxy;

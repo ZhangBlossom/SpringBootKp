@@ -1,7 +1,7 @@
-package blossom.project.designmode.dbroute;
+package blossom.project.designmode.proxy.dbroute;
 
 
-import blossom.project.designmode.dbroute.proxy.UserServiceDynamicProxy;
+import blossom.project.designmode.proxy.dbroute.proxy.UserServiceDynamicProxy;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

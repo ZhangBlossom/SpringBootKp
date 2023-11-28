@@ -1,4 +1,4 @@
-package blossom.project.designmode.dbroute;
+package blossom.project.designmode.proxy.dbroute;
 
 /**
  * @author: ZhangBlossom
