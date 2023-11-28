@@ -1,3 +1,5 @@
+package blossom.project.designmode.singleton;
+
 /**
  * @author: ZhangBlossom
  * @date: 2023/11/27 20:06
