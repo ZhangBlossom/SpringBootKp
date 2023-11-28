@@ -1,6 +1,6 @@
 package blossom.project.designmode.dbroute.proxy;
 
-import blossom.project.designmode.dbroute.db.DynamicDataSourceEntity;
+import blossom.project.designmode.dbroute.db.DynamicDataSource;
 import blossom.project.designmode.proxy.myjdkproxy.MyClassLoader;
 import blossom.project.designmode.proxy.myjdkproxy.MyInvocationHandler;
 import blossom.project.designmode.proxy.myjdkproxy.MyProxy;
@@ -10,9 +10,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
-* ZhangBlossom
+ * @author: ZhangBlossom
+ * @date: 2023/11/28 12:32
+ * @contact: QQ:4602197553
+ * @contact: WX:qczjhczs0114
+ * @blog: https://blog.csdn.net/Zhangsama1
+ * @github: https://github.com/ZhangBlossom
  */
-public class OrderServiceDynamicProxy implements MyInvocationHandler {
+public class UserServiceDynamicProxy implements MyInvocationHandler {
 
     private SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy");
 
@@ -33,7 +38,7 @@ public class OrderServiceDynamicProxy implements MyInvocationHandler {
     private void after() {
         System.out.println("Proxy after method");
         //还原成默认的数据源
-        DynamicDataSourceEntity.restore();
+        DynamicDataSource.reset();
     }
 
     //target 应该是订单对象Order
@@ -46,7 +51,7 @@ public class OrderServiceDynamicProxy implements MyInvocationHandler {
             Long time = (Long) target.getClass().getMethod("getCreateTime").invoke(target);
             Integer dbRouter = Integer.valueOf(yearFormat.format(new Date(time)));
             System.out.println("静态代理类自动分配到【DB_" + dbRouter + "】数据源处理数据");
-            DynamicDataSourceEntity.set(dbRouter);
+            DynamicDataSource.set(dbRouter);
         }catch (Exception e){
             e.printStackTrace();
         }

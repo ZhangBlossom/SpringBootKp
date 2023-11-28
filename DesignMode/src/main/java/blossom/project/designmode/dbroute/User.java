@@ -1,21 +1,19 @@
 package blossom.project.designmode.dbroute;
 
 /**
-* ZhangBlossom
+ * @author: ZhangBlossom
+ * @date: 2023/11/28 12:32
+ * @contact: QQ:4602197553
+ * @contact: WX:qczjhczs0114
+ * @blog: https://blog.csdn.net/Zhangsama1
+ * @github: https://github.com/ZhangBlossom
  */
-public class Order {
-    private Object orderInfo;
+public class User {
     //订单创建时间进行按年分库
     private Long createTime;
     private String id;
 
-    public Object getOrderInfo() {
-        return orderInfo;
-    }
 
-    public void setOrderInfo(Object orderInfo) {
-        this.orderInfo = orderInfo;
-    }
 
     public Long getCreateTime() {
         return createTime;

@@ -1,28 +1,33 @@
 package blossom.project.designmode.dbroute;
 
 
-import blossom.project.designmode.dbroute.proxy.OrderServiceDynamicProxy;
+import blossom.project.designmode.dbroute.proxy.UserServiceDynamicProxy;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
-* ZhangBlossom
+ * @author: ZhangBlossom
+ * @date: 2023/11/28 12:32
+ * @contact: QQ:4602197553
+ * @contact: WX:qczjhczs0114
+ * @blog: https://blog.csdn.net/Zhangsama1
+ * @github: https://github.com/ZhangBlossom
  */
 public class DbRouteProxyTest {
     public static void main(String[] args) {
         try {
-            Order order = new Order();
+            User user = new User();
 
-//            order.setCreateTime(new Date().getTime());
+//            user.setCreateTime(new Date().getTime());
 
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-            Date date = sdf.parse("2020/03/01");
-            order.setCreateTime(date.getTime());
+            Date date = sdf.parse("2023/03/01");
+            user.setCreateTime(date.getTime());
 
-            IOrderService orderService = (IOrderService)new OrderServiceDynamicProxy().getInstance(new OrderService());
-//            IOrderService orderService = (IOrderService)new OrderServiceStaticProxy(new OrderService());
-            orderService.createOrder(order);
+            IUserService orderService = (IUserService)new UserServiceDynamicProxy().getInstance(new UserService());
+//            IOrderService orderService = (IOrderService)new UserServiceStaticProxy(new UserService());
+            orderService.createUser(user);
         }catch (Exception e){
             e.printStackTrace();
         }
